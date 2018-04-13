@@ -19,6 +19,9 @@
   <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
   <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
   <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <script src="/js/stats.js"></script>
+<script src="/js/stopExecutionOnTimeout.js"></script>
   <!-- <script src="/js/qrious.js"></script>
 <script src="/js/gitment.js"></script> -->
 
@@ -149,13 +152,15 @@
   })();
 </script>
 
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>
     <footer class="app-footer">
   <p class="copyright">
-    &copy; 2018 | Powered by
-           <a href="https://hexo.io" target="_blank">Hexo</a>
+    &copy; 2018 | مبني على
+           <a href="https://hexo.io" target="_blank">هيكسو</a>
     <br>
     <a href="https://github.com/bluemix/hexo-theme-rexo">Rexo</a>
   </p>
@@ -199,5 +204,138 @@
 <!-- Baidu Tongji -->
 
 <script src="/js/script.js"></script>
+
+    <script>
+      /* ---- particles.js config ---- */
+      particlesJS("particles-js", {
+        "particles": {
+          "number": {
+            "value": 80,
+            "density": {
+              "enable": true,
+              "value_area": 800
+            }
+          },
+          "color": {
+            "value": "#919eaa"
+          },
+          "shape": {
+            "type": "circle",
+            "stroke": {
+              "width": 0,
+              "color": "#000000"
+            },
+            "polygon": {
+              "nb_sides": 5
+            },
+            "image": {
+              "src": "img/github.svg",
+              "width": 100,
+              "height": 100
+            }
+          },
+          "opacity": {
+            "value": 0.3,
+            "random": false,
+            "anim": {
+              "enable": false,
+              "speed": 1,
+              "opacity_min": 0.1,
+              "sync": false
+            }
+          },
+          "size": {
+            "value": 4,
+            "random": true,
+            "anim": {
+              "enable": false,
+              "speed": 40,
+              "size_min": 0.1,
+              "sync": false
+            }
+          },
+          "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#cccccc",
+            "opacity": 0.4,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 2,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+              "enable": false,
+              "rotateX": 600,
+              "rotateY": 1200
+            }
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": {
+              "enable": true,
+              "mode": "grab"
+            },
+            "onclick": {
+              "enable": true,
+              "mode": "push"
+            },
+            "resize": true
+          },
+          "modes": {
+            "grab": {
+              "distance": 140,
+              "line_linked": {
+                "opacity": 1
+              }
+            },
+            "bubble": {
+              "distance": 400,
+              "size": 40,
+              "duration": 2,
+              "opacity": 8,
+              "speed": 3
+            },
+            "repulse": {
+              "distance": 200,
+              "duration": 0.4
+            },
+            "push": {
+              "particles_nb": 4
+            },
+            "remove": {
+              "particles_nb": 2
+            }
+          }
+        },
+        "retina_detect": true
+      });
+
+      /* ---- stats.js config ---- */
+      // var count_particles, stats, update;
+      // stats = new Stats;
+      // stats.setMode(0);
+      // stats.domElement.style.position = 'absolute';
+      // stats.domElement.style.left = '0px';
+      // stats.domElement.style.top = '0px';
+      // document.body.appendChild(stats.domElement);
+      // count_particles = document.querySelector('.js-count-particles');
+      // update = function() {
+      //   stats.begin();
+      //   stats.end();
+      //   if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
+      //     count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
+      //   }
+      //   requestAnimationFrame(update);
+      // };
+      // requestAnimationFrame(update);
+    </script>
   </body>
 </html>
