@@ -1083,12 +1083,14 @@ canvas {
   padding: 1em 0;
 }
 .project-app h2.title {
-  max-width: 660px;
+  max-width: 700px;
   margin: 30px auto;
+  padding: 0 20px;
 }
 .project-app .project-section {
-  max-width: 660px;
+  max-width: 700px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 .project-app .markdown-content h5 {
   font-weight: normal;
