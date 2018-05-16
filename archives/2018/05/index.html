@@ -3,16 +3,16 @@
   <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-  <meta name="description" content="مدونة عبد المؤمن">
+  <meta name="description" content="LHammer&#39;s Blog">
   <meta name="keyword" content="">
   <title>
     
-      Project | Hexo
+      Hexo
     
   </title>
   <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
 
-  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//at.alicdn.com/t/font_667674_tw54heuwzwhzolxr.css" rel="stylesheet">
   <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
   <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
@@ -37,6 +37,24 @@
       
         <li class="list-item" >
           <!-- <div class="tooltip"> -->
+            <!-- <span class="tooltiptext">🏷</span> -->
+
+            
+            <a href="/tags/" class="item-link">🏷</a>
+          
+        </li>
+      
+        <li class="list-item" >
+          <!-- <div class="tooltip"> -->
+            <!-- <span class="tooltiptext">📟</span> -->
+
+            
+            <a href="/projects/" class="item-link">📟</a>
+          
+        </li>
+      
+        <li class="list-item" >
+          <!-- <div class="tooltip"> -->
             <!-- <span class="tooltiptext">👨🏻‍💻</span> -->
 
             
@@ -55,6 +73,18 @@
         
           <li class="menu-item">
             
+              <a href="/tags/" class="menu-link">🏷</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/projects/" class="menu-link">📟</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
               <a href="/about/" class="menu-link">👨🏻‍💻</a>
             
           </li>
@@ -65,82 +95,41 @@
 </header>
 
     <div id="article-banner">
-  <h2>Project</h2>
+  <h2>الأرشيف</h2>
 </div>
-
-<main class="app-body">
-  <article class="post-article">
-    <section class="markdown-content"   dir=""></section>
+<main class="app-body" id="archives">
+  
+  
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2018
+  </h1>
+  <div class="section-list">
     
-    <p class="post-date" dir="">April 12, 2018</p>
-
     
-
-
+      <div class="section-list-item">
+        <a href="/2018/05/02/css-tricks/" class="archive-title">Web开发者需要知道的CSS Tricks🚨</a>
+        <p class="archive-date">05-02</p>
+      </div>
     
-      <section id="comments">
-        
-      <script>
-        var disqus_shortname = 'https-l-hammer-github-io';
-        
-        var disqus_url = 'http://yoursite.com/project/index.html';
-        
-        (function(){
-          var dsq = document.createElement('script');
-          dsq.type = 'text/javascript';
-          dsq.async = true;
-          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        })();
-      </script>
+      <div class="section-list-item">
+        <a href="/2018/04/12/hello-world/" class="archive-title">Hello World</a>
+        <p class="archive-date">04-12</p>
+      </div>
     
-        <div id="disqus_thread">
-          <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-        </div>
-      </section>
-    
-  </article>
+  </div>
+</section>
+  
 </main>
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/project/index.html';
-    $('#article-banner').geopattern(url)
-    $('.header').removeClass('fixed-header')
-
-     // error image
-    $(".markdown-content img").on('error', function() {
-      $(this).attr('src', 'http://file.muyutech.com/error-img.png') 
-    })
-
-    // zoom image
-    $(".markdown-content img").on('click', function() {
-      var src = $(this).attr('src')
-      var imageW = $(this).width()
-      var imageH = $(this).height()
-      
-      var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
-      zoom = zoom < 1 ? 1 : zoom
-      zoom = zoom > 2 ? 2 : zoom
-      var transY = (($(window).height() - imageH) / 2).toFixed(2)
-
-      $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
-      $('.image-view-wrap').addClass('wrap-active')
-      $('.image-view-wrap img').css({
-        'width': `${imageW}`,
-        'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
-      })
-      $('html').css('overflow', 'hidden')
-
-      $('.image-view-wrap').on('click', function() {
-        $(this).remove()
-        $('html').attr('style', '')
-      })
-    })
-
+    var url = 'http://yoursite.com/archives/2018/05/index.html';
+    $('#article-banner').geopattern(url);
+    $('.header').removeClass('fixed-header');
   })();
 </script>
-
     <!-- particles.js container -->
     <div id="particles-js"></div>
     <div class="scroll-top">
@@ -148,8 +137,8 @@
 </div>
     <footer class="app-footer">
   <p class="copyright">
-    &copy; 2018 | مبني على
-           <a href="https://hexo.io" target="_blank">هيكسو</a>
+    &copy; 2018 | LHammer
+           <a href="https://hexo.io" target="_blank">Hexo</a>
     <br>
     <a href="https://github.com/bluemix/hexo-theme-rexo">Rexo</a>
   </p>

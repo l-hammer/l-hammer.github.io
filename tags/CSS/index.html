@@ -7,7 +7,7 @@
   <meta name="keyword" content="">
   <title>
     
-      About | Hexo
+      Hexo
     
   </title>
   <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
@@ -94,96 +94,40 @@
   </div>
 </header>
 
-    <div id="about-banner"></div>
-<div class="author">
-  <div class="head">
-    <img src="https://avatars2.githubusercontent.com/u/27677988?s=460&v=4" />
-  </div>
-  <h3>LHammer</h3>
-
-
-  <center>
-    <table >
-      <!-- <tr>
-        <td align="right">عبد المؤمن كاظم</td>
-        <td align="left">AbdElmomen Kadhim</td>
-      </tr>
-      <tr>
-        <td align="right">بَـرمِج نفسك على البرمجة</td>
-        <td align="left">Program your self to program</td>
-      </tr>
-      <tr>
-        <td align="right">"أطلب العِلمَ من المَهدِ إلى اللحد"</td>
-        <td align="left">Never stop learning...</td>
-      </tr>
-      <tr>
-        <td align="right">إقرأ</td>
-        <td align="left">Read</td>
-      </tr> -->
-      <tr>
-        <td colspan="2" align="center">👷搬砖的FE实习生~</td>
-      </tr>
-    </table>
-  </center>
-
-
-  <section class="share-icons">
-
-    
-      <a href="https://github.com/l-hammer" target="_blank">
-        <span class="fa-stack fa">
-          <!-- <i class="fa fa-circle fa-stack-2x"></i>
-          <i class="fa fa-github fa-stack-1x fa-inverse"></i> -->
-          <i class="iconfont icon-github1"></i>
-        </span>
-      </a>
-    
-    
-      <a href="https://juejin.im/user/57a3dbb2d342d300574d8369" target="_blank">
-        <span class="fa-stack fa">
-          <i class="iconfont icon-juejin"></i>
-        </span>
-      </a>
-    
-    
-      <a href="https://twitter.com/lhammer_" target="_blank">
-        <span class="fa-stack fa">
-          <i class="iconfont icon-twitter1"></i>
-        </span>
-      </a>
-    
-    
-      <a href="javascript:void(0);" class="cell poptip--top" aria-controls="weixin-huiwu" target="_blank">
-        <span class="fa-stack fa">
-          <i class="iconfont icon-xiangmulan-weixinhao"></i>
-        </span>
-      </a>
-    
-    
-    
-      <a href="javascript:void(0);" class="cell poptip--top" aria-controls="lhammering@gmail.com" target="_blank">
-        <span class="fa-stack fa">
-          <i class="iconfont icon-youxiang1"></i>
-        </span>
-      </a>
-    
-  </section>
+    <div id="article-banner">
+  <h2>الأرشيف</h2>
 </div>
+<main class="app-body" id="archives">
+  
+  
+  
+    <section class="time-section">
+  <h1 class="section-year">
+    2018
+  </h1>
+  <div class="section-list">
+    
+    
+      <div class="section-list-item">
+        <a href="/2018/05/02/css-tricks/" class="archive-title">Web开发者需要知道的CSS Tricks🚨</a>
+        <p class="archive-date">05-02</p>
+      </div>
+    
+      <div class="section-list-item">
+        <a href="/2018/04/12/hello-world/" class="archive-title">Hello World</a>
+        <p class="archive-date">04-12</p>
+      </div>
+    
+  </div>
+</section>
+  
+</main>
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/about/index.html';
-    $('#about-banner').geopattern(url)
-
-    $('.header').removeClass('fixed-header')
-    var windowH = $(window).height();
-    var author = $('.author')
-    var bodyH = author.offset().top + author[0].offsetHeight + 71;
-    if (bodyH < windowH) {
-      author.css({
-        'margin-bottom': windowH - bodyH
-      })
-    }
+    var url = 'http://yoursite.com/tags/CSS/index.html';
+    $('#article-banner').geopattern(url);
+    $('.header').removeClass('fixed-header');
   })();
 </script>
     <!-- particles.js container -->
