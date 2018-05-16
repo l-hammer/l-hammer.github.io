@@ -87,7 +87,7 @@
   display: none;
 }
 body {
-  font-family: 'Amariya', 'Helvetica Neue', Arial, sans-serif;
+  font-family: "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: none;
@@ -95,11 +95,11 @@ body {
   height: 100%;
   margin: 0;
   color: #34495e;
-  font-size: 16px;
+  font-size: 15px;
 }
 @media screen and (max-width: 480px) {
   body {
-    font-size: 15px;
+    font-size: 14px;
   }
 }
 ol,
@@ -144,7 +144,7 @@ pre {
   margin-top: 80px;
 }
 h2.article-head {
-  font-size: 1.5em;
+  font-size: 1.3em;
   margin-bottom: 12px;
   font-weight: 550;
 }
@@ -585,6 +585,7 @@ canvas {
 }
 .copyright {
   color: #7f8c8d;
+  line-height: 24px;
 }
 .guide-pager {
   margin: 1em 3em;
@@ -1081,6 +1082,20 @@ canvas {
   min-width: 300px;
   padding: 1em 0;
 }
+.project-app h2.title {
+  max-width: 660px;
+  margin: 30px auto;
+}
+.project-app .project-section {
+  max-width: 660px;
+  margin: 0 auto;
+}
+.project-app .markdown-content h5 {
+  font-weight: normal;
+}
+.project-app .markdown-content img {
+  display: inline-block;
+}
 .card-container {
   margin: 30px auto;
   display: -webkit-flex;
@@ -1145,6 +1160,12 @@ canvas {
 }
 .card-container .project-card .card-wrap .card-footer span .fa {
   padding-right: 5px;
+}
+.iconfont.icon-star1 {
+  vertical-align: -2px;
+}
+.iconfont.icon-fork3 {
+  font-size: 16px;
 }
 @-moz-keyframes shine {
   0%, 100% {

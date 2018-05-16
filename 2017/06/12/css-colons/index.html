@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="LHammer&#39;s Blog">
+  <meta name="keyword" content="">
+  <title>
+    
+      🙌CSS中一个冒号和两个冒号有什么区别 | LHammer&#39;s Blog
+    
+  </title>
+  <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+
+  <link href="//at.alicdn.com/t/font_667674_yvw7xgxtw7firudi.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <!-- <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script> -->
+
+  
+
+</head>
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <!-- <span>LHammer's Blog</span> -->
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item" >
+          <!-- <div class="tooltip"> -->
+            <!-- <span class="tooltiptext">🏷</span> -->
+
+            
+            <a href="/tags/" class="item-link">🏷</a>
+          
+        </li>
+      
+        <li class="list-item" >
+          <!-- <div class="tooltip"> -->
+            <!-- <span class="tooltiptext">📟</span> -->
+
+            
+            <a href="/projects/" class="item-link">📟</a>
+          
+        </li>
+      
+        <li class="list-item" >
+          <!-- <div class="tooltip"> -->
+            <!-- <span class="tooltiptext">👨🏻‍💻</span> -->
+
+            
+            <a href="/about/" class="item-link">👨🏻‍💻</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">🏷</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/projects/" class="menu-link">📟</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">👨🏻‍💻</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>🙌CSS中一个冒号和两个冒号有什么区别</h2>
+</div>
+
+<main class="app-body">
+  <article class="post-article">
+    <section class="markdown-content"><p>在平时工作中用到伪类选择器的时候一个冒号和两个冒号貌似都是可以的，所以两者到底有什么区别呢，我们先来看下<code>W3C</code>关于<code>CSS3</code>选择器的规范中有一段描述： </p>
+<blockquote>
+<p>　　A pseudo-element is made of two colons (::) followed by the name of the pseudo-element.<br>　　This :: notation is introduced by the current document in order to establish a discrimination between pseudo-classes and pseudo-elements. For compatibility with existing style sheets, user agents must also accept the previous one-colon notation for pseudo-elements introduced in CSS levels 1 and 2 (namely, :first-line, :first-letter, :before and :after). This compatibility is not allowed for the new pseudo-elements introduced in CSS level 3. </p>
+</blockquote>
+<p>简单翻译一下，大意就是，伪元素由双冒号和伪元素名称组成。双冒号是在当前规范中引入的，用于区分伪类和伪元素。但是伪类兼容现存样式，浏览器需要同时支持旧的伪类，比如  <code>:first-line</code>、<code>:first-letter</code>、<code>:before</code>、<code>:after</code>等。那么问题来了，什么是伪类？什么是伪元素？</p>
+<p><code>w3c</code>对两者的定义：</p>
+<blockquote>
+<p>CSS 伪类用于向某些选择器添加特殊的效果。<br>CSS 伪元素用于将特殊的效果添加到某些选择器。</p>
+</blockquote>
+<p>可以明确两点，第一两者都与选择器相关，第二就是添加一些“特殊”的效果。这里特殊指的是两者描述了其他 css 无法描述的东西。伪类可以独立于文档的元素来分配样式，且可以分配给任何元素，逻辑上和功能上类类似，但是其是预定义的、不存在于文档树中且表达方式也不同，所以叫伪类。伪元素所控制的内容和一个元素控制的内容一样，但是伪元素不存在于文档树中，不是真正的元素，所以叫伪元素。</p>
+<h3 id="伪类："><a href="#伪类：" class="headerlink" title="伪类："></a>伪类：</h3><p><code>:first-child</code>, <code>:link:</code>, <code>vistited</code>, <code>:hover:</code>, <code>active:focus</code>, <code>:lang</code>, <code>:not(s)</code>, <code>：root</code>等…</p>
+<h3 id="伪元素："><a href="#伪元素：" class="headerlink" title="伪元素："></a>伪元素：</h3><p><code>:first-line</code>, <code>:first-letter</code>, <code>:before</code>, <code>:after</code>, <code>:placeholder</code>, <code>:selection</code></p>
+<hr>
+<p>⚠️ 如果你的网站只需要兼容webkit、firefox、opera等浏览器，建议对于伪元素采用双冒号的写法，如果不得不兼容IE浏览器，还是用CSS2的单冒号写法比较安全。如果自己不确定的话可以针对某些需要兼容的属性有两种属性。</p>
+<h3 id="伪类和伪元素的区别："><a href="#伪类和伪元素的区别：" class="headerlink" title="伪类和伪元素的区别："></a>伪类和伪元素的区别：</h3><h4 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h4><p>伪类选择元素基于的是当前元素处于的状态，或者说元素当前所具有的特性，而不是元素的id、class、属性等静态的标志。由于状态是动态变化的，所以一个元素达到一个特定状时，它可能得到一个伪类的样式；当状态改变时，它又会失去这个样式。由此可以看出，它的功能和class有些类似，但它是基于文档之外的抽象，所以叫伪类。</p>
+<p><strong>E:link</strong> </p>
+<blockquote>
+<p>伪类将应用于未被访问过的链接，与:visited互斥。</p>
+</blockquote>
+<p><strong>E:hover</strong> </p>
+<blockquote>
+<p>伪类将应用于有鼠标指针悬停于其上的元素。</p>
+</blockquote>
+<p><strong>E:active</strong> </p>
+<blockquote>
+<p>伪类将应用于被激活的元素，如被点击的链接、被按下的按钮等。</p>
+</blockquote>
+<p><strong>E:visited</strong> </p>
+<blockquote>
+<p>伪类将应用于已经被访问过的链接，与:link互斥。</p>
+</blockquote>
+<p><strong>E:focus</strong> </p>
+<blockquote>
+<p>伪类将应用于拥有键盘输入焦点的元素。</p>
+</blockquote>
+<p><strong>E:first-child</strong> </p>
+<blockquote>
+<p>伪类将应用于元素在页面中第一次出现的时候。</p>
+</blockquote>
+<p><strong>E:lang</strong> </p>
+<blockquote>
+<p>伪类将应用于元素带有指定lang的情况。</p>
+</blockquote>
+<p>e.g.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">lang</span>=<span class="string">"zh"</span>&gt;</span>中国<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span>english<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:lang(zh-cmn-Hans)</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#f00</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:lang(en)</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#090</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>E:not(s)</strong></p>
+<blockquote>
+<p>匹配不含有s选择符的元素E。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 列表中除最后一项外的所有列表项加一条底边线 */</span></span><br><span class="line"><span class="selector-class">.demo</span> <span class="selector-tag">li</span><span class="selector-pseudo">:not(</span><span class="selector-pseudo">:last-child)</span> &#123;</span><br><span class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#ddd</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>E:root</strong></p>
+<blockquote>
+<p>匹配E元素在文档的根元素。</p>
+</blockquote>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 非IE文本将为black，IE9及以上为purple，IE8为yellow，IE7为blue，IE6为red */</span></span><br><span class="line"><span class="selector-class">.test</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: black;</span><br><span class="line">  <span class="attribute">color</span>: yellow\<span class="number">0</span>;</span><br><span class="line">  *color: blue;</span><br><span class="line">  _<span class="selector-tag">color</span>: <span class="selector-tag">red</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">html</span><span class="selector-pseudo">:root</span> <span class="selector-class">.test</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: purple\<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h4><p>与伪类针对特殊状态的元素不同的是，伪元素是对元素中的特定内容进行操作，它所操作的层次比伪类更深了一层，也因此它的动态性比伪类要低得多。实际上，设计伪元素的目的就是去选取诸如元素内容第一个字（母）、第一行，选取某些内容前面或后面这种普通的选择器无法完成的工作。它控制的内容实际上和元素是相同的，但是它本身只是基于元素的抽象，并不存在于文档中，所以叫伪元素。</p>
+<p><strong>E::first-letter</strong></p>
+<blockquote>
+<p>伪元素的样式将应用于元素文本的第一个字（母）。</p>
+</blockquote>
+<p><strong>E::first-line</strong></p>
+<blockquote>
+<p>伪元素的样式将应用于元素文本的第一行。</p>
+</blockquote>
+<p><strong>E::before</strong></p>
+<blockquote>
+<p>在元素内容的最前面添加新内容。</p>
+</blockquote>
+<p><strong>E::after</strong></p>
+<blockquote>
+<p>在元素内容的最后面添加新内容。</p>
+</blockquote>
+<p>e.g.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 清楚浮动 */</span></span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::before</span>, <span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>:<span class="string">""</span>;</span><br><span class="line">  <span class="attribute">display</span>:table;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">clear</span>:both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">  <span class="attribute">zoom</span>:<span class="number">1</span>; <span class="comment">/* For IE 6/7 (trigger hasLayout) */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>E::placeholder</strong></p>
+<blockquote>
+<p>用于控制表单输入框占位符的外观，它允许开发者/设计师改变文字占位符的样式，默认的文字占位符为浅灰色。</p>
+</blockquote>
+<p>e.g.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">::-webkit-input-placeholder</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#999</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-ms-input-placeholder</span> &#123; <span class="comment">/* IE10+ */</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#999</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">:-moz-placeholder</span> &#123; <span class="comment">/* Firefox4-18 */</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#999</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">input</span><span class="selector-pseudo">::-moz-placeholder</span> &#123; <span class="comment">/* Firefox19+ */</span></span><br><span class="line">  <span class="attribute">color</span>: <span class="number">#999</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>E::selection</strong></p>
+<blockquote>
+<p>定义元素被选择时的background-color，color及text-shadow(IE11尚不支持定义该属性)。</p>
+</blockquote>
+<p>e.g.</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 将选中字体的颜色设置为#f00，背景颜色设置为#000 */</span></span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::-moz-selection</span>&#123;<span class="attribute">background</span>:<span class="number">#000</span>;<span class="attribute">color</span>:<span class="number">#f00</span>;&#125;</span><br><span class="line"><span class="selector-tag">p</span><span class="selector-pseudo">::selection</span>&#123;<span class="attribute">background</span>:<span class="number">#000</span>;<span class="attribute">color</span>:<span class="number">#f00</span>;&#125;</span><br></pre></td></tr></table></figure></section>
+    
+    <p class="post-date" dir="rtl">2017年6月12日</p>
+
+    
+      <div class="tags" dir="rtl">
+        
+  <a href="/tags#CSS" >
+    <span class="tag-code">CSS</span>
+  </a>
+
+      </div>
+    
+
+
+    
+      <section id="comments">
+        
+      <script>
+        var disqus_shortname = 'https-l-hammer-github-io';
+        
+        var disqus_url = 'http://yoursite.com/2017/06/12/css-colons/';
+        
+        (function(){
+          var dsq = document.createElement('script');
+          dsq.type = 'text/javascript';
+          dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+    
+        <div id="disqus_thread">
+          <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+      </section>
+    
+  </article>
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2017/06/12/css-colons/';
+    $('#article-banner').geopattern(url)
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png') 
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      var imageW = $(this).width()
+      var imageH = $(this).height()
+      
+      var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+      zoom = zoom < 1 ? 1 : zoom
+      zoom = zoom > 2 ? 2 : zoom
+      var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+      $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+      $('.image-view-wrap').addClass('wrap-active')
+      $('.image-view-wrap img').css({
+        'width': `${imageW}`,
+        'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+      })
+      $('html').css('overflow', 'hidden')
+
+      $('.image-view-wrap').on('click', function() {
+        $(this).remove()
+        $('html').attr('style', '')
+      })
+    })
+
+  })();
+</script>
+
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | LHammer
+           <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    <a href="https://github.com/bluemix/hexo-theme-rexo">Rexo</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine == 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+
+    <script>
+      /* ---- particles.js config ---- */
+      particlesJS("particles-js", {
+        "particles": {
+          "number": {
+            "value": 80,
+            "density": {
+              "enable": true,
+              "value_area": 800
+            }
+          },
+          "color": {
+            "value": "#919eaa"
+          },
+          "shape": {
+            "type": "circle",
+            "stroke": {
+              "width": 0,
+              "color": "#000000"
+            },
+            "polygon": {
+              "nb_sides": 5
+            },
+            "image": {
+              "src": "img/github.svg",
+              "width": 100,
+              "height": 100
+            }
+          },
+          "opacity": {
+            "value": 0.3,
+            "random": false,
+            "anim": {
+              "enable": false,
+              "speed": 1,
+              "opacity_min": 0.1,
+              "sync": false
+            }
+          },
+          "size": {
+            "value": 4,
+            "random": true,
+            "anim": {
+              "enable": false,
+              "speed": 40,
+              "size_min": 0.1,
+              "sync": false
+            }
+          },
+          "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#cccccc",
+            "opacity": 0.4,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 2,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+              "enable": false,
+              "rotateX": 600,
+              "rotateY": 1200
+            }
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": {
+              "enable": true,
+              "mode": "grab"
+            },
+            "onclick": {
+              "enable": true,
+              "mode": "push"
+            },
+            "resize": true
+          },
+          "modes": {
+            "grab": {
+              "distance": 140,
+              "line_linked": {
+                "opacity": 1
+              }
+            },
+            "bubble": {
+              "distance": 400,
+              "size": 40,
+              "duration": 2,
+              "opacity": 8,
+              "speed": 3
+            },
+            "repulse": {
+              "distance": 200,
+              "duration": 0.4
+            },
+            "push": {
+              "particles_nb": 4
+            },
+            "remove": {
+              "particles_nb": 2
+            }
+          }
+        },
+        "retina_detect": true
+      });
+    </script>
+  </body>
+</html>

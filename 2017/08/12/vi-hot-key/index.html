@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="LHammer&#39;s Blog">
+  <meta name="keyword" content="">
+  <title>
+    
+      🛠VIM常用操作笔记 | LHammer&#39;s Blog
+    
+  </title>
+  <!-- <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"> -->
+
+  <link href="//at.alicdn.com/t/font_667674_yvw7xgxtw7firudi.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdn.bootcss.com/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdn.bootcss.com/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <!-- <script src="/js/qrious.js"></script>
+<script src="/js/gitment.js"></script> -->
+
+  
+
+</head>
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <!-- <span>LHammer's Blog</span> -->
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item" >
+          <!-- <div class="tooltip"> -->
+            <!-- <span class="tooltiptext">🏷</span> -->
+
+            
+            <a href="/tags/" class="item-link">🏷</a>
+          
+        </li>
+      
+        <li class="list-item" >
+          <!-- <div class="tooltip"> -->
+            <!-- <span class="tooltiptext">📟</span> -->
+
+            
+            <a href="/projects/" class="item-link">📟</a>
+          
+        </li>
+      
+        <li class="list-item" >
+          <!-- <div class="tooltip"> -->
+            <!-- <span class="tooltiptext">👨🏻‍💻</span> -->
+
+            
+            <a href="/about/" class="item-link">👨🏻‍💻</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">🏷</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/projects/" class="menu-link">📟</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">👨🏻‍💻</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>🛠VIM常用操作笔记</h2>
+</div>
+
+<main class="app-body">
+  <article class="post-article">
+    <section class="markdown-content"><p><img src="https://images-cdn.shimo.im/OuPlkXGqRHUXSvv7/vi-vim-cheat-sheet-sch.gif!thumbnail" alt=""></p>
+<p>vi === vim<br>g === global<br>‘:’    表示命令模式下输入<br>Vi 语</p>
+<p>动词：表示我们将要进行什么操作<br>d === delete    # → 表示删除<br>r === replace    # → 表示替换<br>c === change    # → 表示修改<br>y === yank    # → 表示复制<br>v === visual select    # → 表示选取<br>名词：表示我们将要处理的文本<br>w === word    # → 表示一个单词<br>s === sentence    # → 表示一个句子<br>p === paragraph    # → 表示一个段落<br>t === tag    # → 表示一个HTML标签<br>介词：界定了待编辑文本的范围或者位置<br>i === inside    # → 表示“在…之内”<br>a === around    # → 表示“环绕…”<br>t === to    # → 表示“到…位置前”<br>f ===forward    # → 表示“到…位置上”</p>
+<p>数词：指定了待编辑文本对象的数量或执行操作的次数<br>c3w === change three words    # → 修改三个单词<br>d2w === delete two words    # → 删除两个单词<br>2dw === twice delete word    # → 两次删除单词<br>3x === three times delete character    # → 三次删除字符<br>组词：动词+介词+名词<br>dip === delete inside paragraph    # → 删除一个段落:<br>vis === visual select inside sentence    # → 选取一个句子<br>ciw === change inside word    # → 修改一个单词<br>caw === change around word    # → 修改一个单词<br>dtx === delete to x    # → 删除文本直到字符“x”（不包括字符“x”)<br>dfx === delete forward x    # → 删除文本直到字符“x”（包括字符“x”)</p>
+<p>常用快捷键</p>
+<p>启动vi<br>$ vim<br>vi常见模式<br>正常模式：又称命令模式，可以使用快捷键命令，或按:输入命令行。<br>插入模式：可以输入文本，在正常模式下，按i、a、o等都可以进入插入模式。<br>可视模式：正常模式下按v可以进入可视模式， 在可视模式下，移动光标可以选择文本。按V进入可视行模式， 总是整行整行的选中。ctrl+v进入可视块模式。<br>替换模式：正常模式下，按R进入。<br>打开文件<br>vi filea  # → 打开文件filea，光标默认在第一行<br>vi + filea  # → 打开文件filea，并将光标定位到最后一行<br>vi +8/n filea  # → 打开文件filea，并将光标定位到第8/n行<br>vi +/xxx filea  # → 打开文件filea，并将光标定位到xxx第一次出现的位置<br>vi filea fileb filec  # → 同时打开文件filea，fileb，filec<br>:n(next)  # → 切换下一个文件<br>:N(prev)  # → 切换上一个文件<br>折叠打开<br>zi  # → 关闭/打开折叠<br>zc  # → 折叠<br>zC/zR  # → 对所在范围内所有嵌套的折叠点进行折叠<br>zo  # → 展开折叠<br>zO/zM  # → 对所在范围内所有嵌套的折叠点展开<br>打开目录<br>:Ex <clipname>  # → 打开当前文件所在目录或指定目录<br>:Se <clipname>  # → 上下分割并打开当前目录或指定目录<br>:Ve <clipname>  # → 左右分割并打开当前目录或指定目录<br>:Te <clipname>  # → 新建标签并打开当前目录或指定目录<br>注：打开目录之后可通过移动光标打开相应文件，常用操作如下：<br>enter  # → 回车会在当前窗口打开光标所在文件,即目录会被关闭<br>:p  # → 在预览窗口打开光标所在文件<br>:pclose  # → 关闭预览串口<br>:o  # → 在新浏览窗口打开光标所在文件，使用上下分割<br>:t  # → 在新标签页里打开光标所在文件(推荐)<br>替换<br>% s/old/new/  # → 替换当前行第一个old<br>% s/old/new/g  # → 替换当前行所有old<br>8，29 s/old/new/g  # → 替换8-29行出现的所有old<br>1，$ s/old/new/g  # → 替换整个文件中出现的所有old，等价于 % s/old/new/g<br>g/string/s//new/g  # → 查找并替换，也等价于 % s/old/new/g<br>gU  # → 将选定范围全部大写<br>gu  # → 将选定范围全部小写<br>gUw/gUe  # → 将光标所在位置的单词转为大写<br>guw/gue  # → 将光标所在位置的单词转为小写<br>查找<br>/<search>  # → 向后查找指定字符串<br>?<search>  # → 向后查找指定字符串<br>n  # → 查找下一个<br>N  # → 查找上一个<br>移动<br>h  # → 向左一字符<br>j  # → 下一行<br>k  # → 上一行<br>l  # → 向右一字符<br>w or W  # → 向右移动到下一单词开头<br>e or E  # → 向右移动到单词结尾<br>b or B  # → 向左移动到单词开头<br>gg  # → 到文档第一行<br>G  # → 到文档最后一行<br>0  # → 到行首（第 1 列）<br>^  # → 到第一个非空白字符<br>$  # → 到行尾<br>:<n> or <n>gg  # → 跳转到第 N 行<br>:+<n> or <n>j  # → 向下跳 N 行<br>:-<n> or <n>k  # → 向上跳 N 行<br>翻屏<br>Ctrl-d  # → 向下移动半页<br>Ctrl-u  # → 向上移动半页<br>Ctrl-f  # → 向下移动一页<br>Ctrl-b  # → 向上移动一页<br>插入<br>i  # → 当前字符前插入<br>a  # → 当前字符后插入<br>I  # → 行首插入<br>A  # → 行尾插入<br>o  # → 在下一行插入<br>O  # → 在上一行插入<br>注：以上任何一个命令都会使 vim 进入 insert 模式</n></n></n></n></n></n></search></search></clipname></clipname></clipname></clipname></p>
+<p>删除<br>x  # → 删除当前字符，相当于 insert 模式下的 Delete<br>X  # → 删除前一个字符，相当于 insert 模式下的 Backspace<br>D  # → 删除到行尾<br>dd  # → 删除当前行，并将删除的内容保存到 vim 剪贴板<br>ndd  # → 删除从当前行开始的n行<br>de or dw  # → 删除一个单词/光标之后的单词剩余部分<br>d<x>  # → 删除指定内容并保存到 vim 剪贴板<br>c<x>  # → 删除指定内容并保存到 vim 剪贴板，同时进入 insert 模式<br>8,29 de  # → 删除8-29行<br>复制<br>yy  # → 复制当前行到 vim 剪贴板<br>nyy  # → 复制光标以下的n行到 vim 剪贴板<br>y<x>  # → 复制指定内容到 vim 剪贴板<br>:9，15 co 16  # → 将9~15行内容复制到第16行（文件内复制推荐）<br>粘贴<br>p  # → 在当前位置后粘贴<br>P  # → 在当前位置前粘贴<br>合并/撤销/重做<br>J  # → 将当前行与下一行合并<br>u  # → 撤销<br>ctrl r  # → 重做<br>保存<br>:w  # → 保存当前文件<br>:q!  # → 退出<br>:wq!  # → 保存并退出<br>:wa  # → 保存全部文件<br>:saveas <new filename=""><br>行号<br>set nu or set number  # → 显示行号<br>set nonu or set nonumber  # → 隐藏行号<br>注释<br>:8,29 s#^#//#g  # → 在8到29行添加‘//‘注释<br>:8,29 s#^//##g  # → 在8到29行删除’//‘注释<br>:8,29 s/^/#/g  # → 在8到29行添加‘#’注释<br>:8,29 s/^#//g  # → 在8到29行删除’#’注释<br>:8,29 s/^/<!--/g  # → 在8到29行开头添加'<!--'注释
+:8,29 s/^/-->/g  # → 在8到29行结尾添加’–&gt;’注释<br>:8,29 s/^<!--//g  # → 在8到29行开头删除'<!--'注释
+:8,29 s/^/<!--/g  # → 在8到29行结尾删除'-->‘注释<br>注：如果匹配’//‘那么使用’#’作为分割符这样不需要对‘//‘做转义处理</new></x></x></x></p>
+<p>分屏<br>:sp(split)  # → 上下分屏<br>:vs(vsplit)  # → 左右分屏<br>ctrl w w  # → 激活下一个窗口<br>标签页(NERDTree)<br>:tabe <new filename="">  # → 打开新标签页<br>gt or tabn(tabnext)  # → 切换下一个标签页<br>gT or tabp(tabprevious)  # → 切换上一个标签页<br>:tabr(tabrewind) or tabfi(tabfirst)  # → 切换到第一个标签页<br>:tabl(tablast)  # → 切换到最后一个标签页<br>:tabc(tabclose)  # → 关闭当前标签页<br>:tabo(tabonly)  # → 关闭其他标签页<br>:tabs  # → 查看buffer list<br>块操作</new></p>
+<p><n>gg  # → 跳转光标到起始行<br>ctrl v   # → 进入快操作模式<br>j  # → 移动光标到需要编辑的相同位置<br>A/I  # → 开始在字符后/前插入指定内容,按esc退出块模式即可完成操作</n></p>
+<p><n>gg$x  # → 删除指定行末尾的字符<br>vi中的宏<br>qx  # → 开始录制宏，x为a到z或0~9的任意字符<br>q  # → 终止录制宏<br>@x  # → 调用先前录制的宏<br>小技巧<br>.  # → 重复执行上一个命令</n></p>
+<blockquote>
+<blockquote>
+<h1 id="→-向右自动缩进（结合块模式使用可进行多行缩进）"><a href="#→-向右自动缩进（结合块模式使用可进行多行缩进）" class="headerlink" title="→ 向右自动缩进（结合块模式使用可进行多行缩进）"></a>→ 向右自动缩进（结合块模式使用可进行多行缩进）</h1><p>&lt;&lt;  # → 向左自动缩进（结合块模式使用可进行多行缩进）<br>=  # → 自动排版当前选中代码<br>gg=G  # → 对整个文件进行排版<br>:f  # → 显示vim当前的文件路径<br>:pwd  # → 显示vim的工作目录<br>:set ff  # → 显示当前文件的格式<br>NERDTree<br>o  # → 打开一个目录或者打开文件，创建的是buffer，也可以用来打开书签<br>go  # → 打开一个文件，但是光标仍然留在NERDTree，创建的是buffer<br>t  # → 打开一个文件，创建的是Tab，对书签同样生效<br>T  # → 打开一个文件，但是光标仍然留在NERDTree，创建的是Tab，对书签同样生效<br>i  # → 水平分割创建文件的窗口，创建的是buffer<br>gi  # → 水平分割创建文件的窗口，但是光标仍然留在NERDTree<br>s  # → 垂直分割创建文件的窗口，创建的是buffer<br>gs  # → 和gi，go类似<br>x  # → 收起当前打开的目录<br>X  # → 收起所有打开的目录<br>e  # → 以文件管理的方式打开选中的目录<br>D  # → 删除书签<br>P  # → 大写，跳转到当前根路径<br>p  # → 小写，跳转到光标所在的上一级路径<br>K  # → 跳转到第一个子路径<br>J  # → 跳转到最后一个子路径</p>
+</blockquote>
+</blockquote>
+<p><c-j>和<c-k>  # → 在同级目录和文件间移动，忽略子目录和子文件<br>C  # → 将根路径设置为光标所在的目录<br>u  # → 设置上级目录为根路径<br>U  # → 设置上级目录为跟路径，但是维持原来目录打开的状态<br>r  # → 刷新光标所在的目录<br>R  # → 刷新当前根路径<br>m  # → 显示文件系统菜单<br>cd  # → 将 CWD 设为选中目录<br>F  # → 切换是否显示文件<br>B  # → 切换是否显示书签<br>I  # → 显示或者不显示隐藏文件<br>f  # → 打开和关闭文件过滤器<br>q  # → 关闭NERDTree<br>A  # → 全屏显示NERDTree，或者关闭全屏<br>Airline<br>Ctrl-N  # → 切换下一个buffer<br>Ctrl-P  # → 切换前一个buffer<br>:ls  # → 查看buffer list<br>:bd  # → 关闭当前buffer<br>:b n  # → 切换buffer，n为buffer序号<br>vim-multiple-cursors<br>Ctrl-n  # → 连续选中光标所在单词的下一个<br>Shift-i  # → 进入块插入模式</c-k></c-j></p>
+<p>更新中……</p>
+<p>附：VIM键位图</p>
+</section>
+    
+    <p class="post-date" dir="ltl">2017年8月12日</p>
+
+    
+      <div class="tags" dir="ltl">
+        
+  <a href="/tags#vim" >
+    <span class="tag-code">vim</span>
+  </a>
+
+      </div>
+    
+
+
+    
+      <section id="comments">
+        
+      <script>
+        var disqus_shortname = 'https-l-hammer-github-io';
+        
+        var disqus_url = 'http://yoursite.com/2017/08/12/vi-hot-key/';
+        
+        (function(){
+          var dsq = document.createElement('script');
+          dsq.type = 'text/javascript';
+          dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+      </script>
+    
+        <div id="disqus_thread">
+          <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        </div>
+      </section>
+    
+  </article>
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2017/08/12/vi-hot-key/';
+    $('#article-banner').geopattern(url)
+    $('.header').removeClass('fixed-header')
+
+     // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png') 
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      var imageW = $(this).width()
+      var imageH = $(this).height()
+      
+      var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+      zoom = zoom < 1 ? 1 : zoom
+      zoom = zoom > 2 ? 2 : zoom
+      var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+      $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+      $('.image-view-wrap').addClass('wrap-active')
+      $('.image-view-wrap img').css({
+        'width': `${imageW}`,
+        'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+      })
+      $('html').css('overflow', 'hidden')
+
+      $('.image-view-wrap').on('click', function() {
+        $(this).remove()
+        $('html').attr('style', '')
+      })
+    })
+
+  })();
+</script>
+
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2018 | LHammer
+           <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    <a href="https://github.com/bluemix/hexo-theme-rexo">Rexo</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine == 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+
+    <script>
+      /* ---- particles.js config ---- */
+      particlesJS("particles-js", {
+        "particles": {
+          "number": {
+            "value": 80,
+            "density": {
+              "enable": true,
+              "value_area": 800
+            }
+          },
+          "color": {
+            "value": "#919eaa"
+          },
+          "shape": {
+            "type": "circle",
+            "stroke": {
+              "width": 0,
+              "color": "#000000"
+            },
+            "polygon": {
+              "nb_sides": 5
+            },
+            "image": {
+              "src": "img/github.svg",
+              "width": 100,
+              "height": 100
+            }
+          },
+          "opacity": {
+            "value": 0.3,
+            "random": false,
+            "anim": {
+              "enable": false,
+              "speed": 1,
+              "opacity_min": 0.1,
+              "sync": false
+            }
+          },
+          "size": {
+            "value": 4,
+            "random": true,
+            "anim": {
+              "enable": false,
+              "speed": 40,
+              "size_min": 0.1,
+              "sync": false
+            }
+          },
+          "line_linked": {
+            "enable": true,
+            "distance": 150,
+            "color": "#cccccc",
+            "opacity": 0.4,
+            "width": 1
+          },
+          "move": {
+            "enable": true,
+            "speed": 2,
+            "direction": "none",
+            "random": false,
+            "straight": false,
+            "out_mode": "out",
+            "bounce": false,
+            "attract": {
+              "enable": false,
+              "rotateX": 600,
+              "rotateY": 1200
+            }
+          }
+        },
+        "interactivity": {
+          "detect_on": "canvas",
+          "events": {
+            "onhover": {
+              "enable": true,
+              "mode": "grab"
+            },
+            "onclick": {
+              "enable": true,
+              "mode": "push"
+            },
+            "resize": true
+          },
+          "modes": {
+            "grab": {
+              "distance": 140,
+              "line_linked": {
+                "opacity": 1
+              }
+            },
+            "bubble": {
+              "distance": 400,
+              "size": 40,
+              "duration": 2,
+              "opacity": 8,
+              "speed": 3
+            },
+            "repulse": {
+              "distance": 200,
+              "duration": 0.4
+            },
+            "push": {
+              "particles_nb": 4
+            },
+            "remove": {
+              "particles_nb": 2
+            }
+          }
+        },
+        "retina_detect": true
+      });
+    </script>
+  </body>
+</html>
