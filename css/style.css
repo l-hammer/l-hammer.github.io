@@ -628,8 +628,8 @@ canvas {
 }
 .markdown-content p,
 .article-summary p {
-  line-height: 1.6em;
-  font-size: 1em;
+  line-height: 1.8em;
+  font-size: 0.9em;
 }
 .markdown-content p code,
 .article-summary p code {
@@ -659,7 +659,7 @@ canvas {
 .markdown-content h4,
 .article-summary h4 {
   margin: 1em 0;
-  font-size: 1.2em;
+  font-size: 1em;
 }
 .markdown-content h4:before,
 .article-summary h4:before {
@@ -873,9 +873,8 @@ canvas {
 #about-banner {
   width: 100%;
   position: relative;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-position: center;
-  background-size: cover;
   height: 350px;
 }
 #about-banner:after {

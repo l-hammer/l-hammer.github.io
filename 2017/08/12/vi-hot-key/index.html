@@ -24,6 +24,17 @@
 <script src="/js/gitment.js"></script> -->
 
   
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-119770326-1', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+
 
 </head>
   <body>
@@ -100,24 +111,56 @@
 
 <main class="app-body">
   <article class="post-article">
-    <section class="markdown-content"><p><img src="https://images-cdn.shimo.im/OuPlkXGqRHUXSvv7/vi-vim-cheat-sheet-sch.gif!thumbnail" alt=""></p>
-<p>vi === vim<br>g === global<br>‘:’    表示命令模式下输入<br>Vi 语</p>
-<p>动词：表示我们将要进行什么操作<br>d === delete    # → 表示删除<br>r === replace    # → 表示替换<br>c === change    # → 表示修改<br>y === yank    # → 表示复制<br>v === visual select    # → 表示选取<br>名词：表示我们将要处理的文本<br>w === word    # → 表示一个单词<br>s === sentence    # → 表示一个句子<br>p === paragraph    # → 表示一个段落<br>t === tag    # → 表示一个HTML标签<br>介词：界定了待编辑文本的范围或者位置<br>i === inside    # → 表示“在…之内”<br>a === around    # → 表示“环绕…”<br>t === to    # → 表示“到…位置前”<br>f ===forward    # → 表示“到…位置上”</p>
-<p>数词：指定了待编辑文本对象的数量或执行操作的次数<br>c3w === change three words    # → 修改三个单词<br>d2w === delete two words    # → 删除两个单词<br>2dw === twice delete word    # → 两次删除单词<br>3x === three times delete character    # → 三次删除字符<br>组词：动词+介词+名词<br>dip === delete inside paragraph    # → 删除一个段落:<br>vis === visual select inside sentence    # → 选取一个句子<br>ciw === change inside word    # → 修改一个单词<br>caw === change around word    # → 修改一个单词<br>dtx === delete to x    # → 删除文本直到字符“x”（不包括字符“x”)<br>dfx === delete forward x    # → 删除文本直到字符“x”（包括字符“x”)</p>
-<p>常用快捷键</p>
-<p>启动vi<br>$ vim<br>vi常见模式<br>正常模式：又称命令模式，可以使用快捷键命令，或按:输入命令行。<br>插入模式：可以输入文本，在正常模式下，按i、a、o等都可以进入插入模式。<br>可视模式：正常模式下按v可以进入可视模式， 在可视模式下，移动光标可以选择文本。按V进入可视行模式， 总是整行整行的选中。ctrl+v进入可视块模式。<br>替换模式：正常模式下，按R进入。<br>打开文件<br>vi filea  # → 打开文件filea，光标默认在第一行<br>vi + filea  # → 打开文件filea，并将光标定位到最后一行<br>vi +8/n filea  # → 打开文件filea，并将光标定位到第8/n行<br>vi +/xxx filea  # → 打开文件filea，并将光标定位到xxx第一次出现的位置<br>vi filea fileb filec  # → 同时打开文件filea，fileb，filec<br>:n(next)  # → 切换下一个文件<br>:N(prev)  # → 切换上一个文件<br>折叠打开<br>zi  # → 关闭/打开折叠<br>zc  # → 折叠<br>zC/zR  # → 对所在范围内所有嵌套的折叠点进行折叠<br>zo  # → 展开折叠<br>zO/zM  # → 对所在范围内所有嵌套的折叠点展开<br>打开目录<br>:Ex <clipname>  # → 打开当前文件所在目录或指定目录<br>:Se <clipname>  # → 上下分割并打开当前目录或指定目录<br>:Ve <clipname>  # → 左右分割并打开当前目录或指定目录<br>:Te <clipname>  # → 新建标签并打开当前目录或指定目录<br>注：打开目录之后可通过移动光标打开相应文件，常用操作如下：<br>enter  # → 回车会在当前窗口打开光标所在文件,即目录会被关闭<br>:p  # → 在预览窗口打开光标所在文件<br>:pclose  # → 关闭预览串口<br>:o  # → 在新浏览窗口打开光标所在文件，使用上下分割<br>:t  # → 在新标签页里打开光标所在文件(推荐)<br>替换<br>% s/old/new/  # → 替换当前行第一个old<br>% s/old/new/g  # → 替换当前行所有old<br>8，29 s/old/new/g  # → 替换8-29行出现的所有old<br>1，$ s/old/new/g  # → 替换整个文件中出现的所有old，等价于 % s/old/new/g<br>g/string/s//new/g  # → 查找并替换，也等价于 % s/old/new/g<br>gU  # → 将选定范围全部大写<br>gu  # → 将选定范围全部小写<br>gUw/gUe  # → 将光标所在位置的单词转为大写<br>guw/gue  # → 将光标所在位置的单词转为小写<br>查找<br>/<search>  # → 向后查找指定字符串<br>?<search>  # → 向后查找指定字符串<br>n  # → 查找下一个<br>N  # → 查找上一个<br>移动<br>h  # → 向左一字符<br>j  # → 下一行<br>k  # → 上一行<br>l  # → 向右一字符<br>w or W  # → 向右移动到下一单词开头<br>e or E  # → 向右移动到单词结尾<br>b or B  # → 向左移动到单词开头<br>gg  # → 到文档第一行<br>G  # → 到文档最后一行<br>0  # → 到行首（第 1 列）<br>^  # → 到第一个非空白字符<br>$  # → 到行尾<br>:<n> or <n>gg  # → 跳转到第 N 行<br>:+<n> or <n>j  # → 向下跳 N 行<br>:-<n> or <n>k  # → 向上跳 N 行<br>翻屏<br>Ctrl-d  # → 向下移动半页<br>Ctrl-u  # → 向上移动半页<br>Ctrl-f  # → 向下移动一页<br>Ctrl-b  # → 向上移动一页<br>插入<br>i  # → 当前字符前插入<br>a  # → 当前字符后插入<br>I  # → 行首插入<br>A  # → 行尾插入<br>o  # → 在下一行插入<br>O  # → 在上一行插入<br>注：以上任何一个命令都会使 vim 进入 insert 模式</n></n></n></n></n></n></search></search></clipname></clipname></clipname></clipname></p>
-<p>删除<br>x  # → 删除当前字符，相当于 insert 模式下的 Delete<br>X  # → 删除前一个字符，相当于 insert 模式下的 Backspace<br>D  # → 删除到行尾<br>dd  # → 删除当前行，并将删除的内容保存到 vim 剪贴板<br>ndd  # → 删除从当前行开始的n行<br>de or dw  # → 删除一个单词/光标之后的单词剩余部分<br>d<x>  # → 删除指定内容并保存到 vim 剪贴板<br>c<x>  # → 删除指定内容并保存到 vim 剪贴板，同时进入 insert 模式<br>8,29 de  # → 删除8-29行<br>复制<br>yy  # → 复制当前行到 vim 剪贴板<br>nyy  # → 复制光标以下的n行到 vim 剪贴板<br>y<x>  # → 复制指定内容到 vim 剪贴板<br>:9，15 co 16  # → 将9~15行内容复制到第16行（文件内复制推荐）<br>粘贴<br>p  # → 在当前位置后粘贴<br>P  # → 在当前位置前粘贴<br>合并/撤销/重做<br>J  # → 将当前行与下一行合并<br>u  # → 撤销<br>ctrl r  # → 重做<br>保存<br>:w  # → 保存当前文件<br>:q!  # → 退出<br>:wq!  # → 保存并退出<br>:wa  # → 保存全部文件<br>:saveas <new filename=""><br>行号<br>set nu or set number  # → 显示行号<br>set nonu or set nonumber  # → 隐藏行号<br>注释<br>:8,29 s#^#//#g  # → 在8到29行添加‘//‘注释<br>:8,29 s#^//##g  # → 在8到29行删除’//‘注释<br>:8,29 s/^/#/g  # → 在8到29行添加‘#’注释<br>:8,29 s/^#//g  # → 在8到29行删除’#’注释<br>:8,29 s/^/<!--/g  # → 在8到29行开头添加'<!--'注释
-:8,29 s/^/-->/g  # → 在8到29行结尾添加’–&gt;’注释<br>:8,29 s/^<!--//g  # → 在8到29行开头删除'<!--'注释
-:8,29 s/^/<!--/g  # → 在8到29行结尾删除'-->‘注释<br>注：如果匹配’//‘那么使用’#’作为分割符这样不需要对‘//‘做转义处理</new></x></x></x></p>
-<p>分屏<br>:sp(split)  # → 上下分屏<br>:vs(vsplit)  # → 左右分屏<br>ctrl w w  # → 激活下一个窗口<br>标签页(NERDTree)<br>:tabe <new filename="">  # → 打开新标签页<br>gt or tabn(tabnext)  # → 切换下一个标签页<br>gT or tabp(tabprevious)  # → 切换上一个标签页<br>:tabr(tabrewind) or tabfi(tabfirst)  # → 切换到第一个标签页<br>:tabl(tablast)  # → 切换到最后一个标签页<br>:tabc(tabclose)  # → 关闭当前标签页<br>:tabo(tabonly)  # → 关闭其他标签页<br>:tabs  # → 查看buffer list<br>块操作</new></p>
-<p><n>gg  # → 跳转光标到起始行<br>ctrl v   # → 进入快操作模式<br>j  # → 移动光标到需要编辑的相同位置<br>A/I  # → 开始在字符后/前插入指定内容,按esc退出块模式即可完成操作</n></p>
-<p><n>gg$x  # → 删除指定行末尾的字符<br>vi中的宏<br>qx  # → 开始录制宏，x为a到z或0~9的任意字符<br>q  # → 终止录制宏<br>@x  # → 调用先前录制的宏<br>小技巧<br>.  # → 重复执行上一个命令</n></p>
-<blockquote>
-<blockquote>
-<h1 id="→-向右自动缩进（结合块模式使用可进行多行缩进）"><a href="#→-向右自动缩进（结合块模式使用可进行多行缩进）" class="headerlink" title="→ 向右自动缩进（结合块模式使用可进行多行缩进）"></a>→ 向右自动缩进（结合块模式使用可进行多行缩进）</h1><p>&lt;&lt;  # → 向左自动缩进（结合块模式使用可进行多行缩进）<br>=  # → 自动排版当前选中代码<br>gg=G  # → 对整个文件进行排版<br>:f  # → 显示vim当前的文件路径<br>:pwd  # → 显示vim的工作目录<br>:set ff  # → 显示当前文件的格式<br>NERDTree<br>o  # → 打开一个目录或者打开文件，创建的是buffer，也可以用来打开书签<br>go  # → 打开一个文件，但是光标仍然留在NERDTree，创建的是buffer<br>t  # → 打开一个文件，创建的是Tab，对书签同样生效<br>T  # → 打开一个文件，但是光标仍然留在NERDTree，创建的是Tab，对书签同样生效<br>i  # → 水平分割创建文件的窗口，创建的是buffer<br>gi  # → 水平分割创建文件的窗口，但是光标仍然留在NERDTree<br>s  # → 垂直分割创建文件的窗口，创建的是buffer<br>gs  # → 和gi，go类似<br>x  # → 收起当前打开的目录<br>X  # → 收起所有打开的目录<br>e  # → 以文件管理的方式打开选中的目录<br>D  # → 删除书签<br>P  # → 大写，跳转到当前根路径<br>p  # → 小写，跳转到光标所在的上一级路径<br>K  # → 跳转到第一个子路径<br>J  # → 跳转到最后一个子路径</p>
+    <section class="markdown-content"><img src="/css/images/vi-vim-cheat-sheet-sch.gif">
+<p><code>vi === vim</code><br><code>g === global</code><br><code>&#39;:&#39;    表示命令模式下输入</code></p>
+<h3 id="Vi-语"><a href="#Vi-语" class="headerlink" title="Vi 语"></a>Vi 语</h3><blockquote>
+<p>动词：表示我们将要进行什么操作</p>
 </blockquote>
+<p><code>d === delete    # → 表示删除</code><br><code>r === replace    # → 表示替换</code><br><code>c === change    # → 表示修改</code><br><code>y === yank    # → 表示复制</code><br><code>v === visual select    # → 表示选取</code></p>
+<blockquote>
+<p>名词：表示我们将要处理的文本</p>
 </blockquote>
-<p><c-j>和<c-k>  # → 在同级目录和文件间移动，忽略子目录和子文件<br>C  # → 将根路径设置为光标所在的目录<br>u  # → 设置上级目录为根路径<br>U  # → 设置上级目录为跟路径，但是维持原来目录打开的状态<br>r  # → 刷新光标所在的目录<br>R  # → 刷新当前根路径<br>m  # → 显示文件系统菜单<br>cd  # → 将 CWD 设为选中目录<br>F  # → 切换是否显示文件<br>B  # → 切换是否显示书签<br>I  # → 显示或者不显示隐藏文件<br>f  # → 打开和关闭文件过滤器<br>q  # → 关闭NERDTree<br>A  # → 全屏显示NERDTree，或者关闭全屏<br>Airline<br>Ctrl-N  # → 切换下一个buffer<br>Ctrl-P  # → 切换前一个buffer<br>:ls  # → 查看buffer list<br>:bd  # → 关闭当前buffer<br>:b n  # → 切换buffer，n为buffer序号<br>vim-multiple-cursors<br>Ctrl-n  # → 连续选中光标所在单词的下一个<br>Shift-i  # → 进入块插入模式</c-k></c-j></p>
+<p><code>w === word    # → 表示一个单词</code><br><code>s === sentence    # → 表示一个句子</code><br><code>p === paragraph    # → 表示一个段落</code><br><code>t === tag    # → 表示一个HTML标签</code></p>
+<blockquote>
+<p>介词：界定了待编辑文本的范围或者位置`</p>
+</blockquote>
+<p><code>i === inside    # → 表示“在...之内”</code><br><code>a === around    # → 表示“环绕...”</code><br><code>t === to    # → 表示“到...位置前”</code><br><code>f ===forward    # → 表示“到...位置上”</code></p>
+<p><img src="/css/images/vi-language.png" alt=""></p>
+<blockquote>
+<p>数词：指定了待编辑文本对象的数量或执行操作的次数`</p>
+</blockquote>
+<p><code>c3w === change three words    # → 修改三个单词</code><br><code>d2w === delete two words    # → 删除两个单词</code><br><code>2dw === twice delete word    # → 两次删除单词</code><br><code>3x === three times delete character    # → 三次删除字符</code></p>
+<blockquote>
+<p>组词：动词+介词+名词`</p>
+</blockquote>
+<p><code>dip === delete inside paragraph    # → 删除一个段落:</code><br><code>vis === visual select inside sentence    # → 选取一个句子</code><br><code>ciw === change inside word    # → 修改一个单词</code><br><code>caw === change around word    # → 修改一个单词</code><br><code>dtx === delete to x    # → 删除文本直到字符“x”（不包括字符“x”)</code><br><code>dfx === delete forward x    # → 删除文本直到字符“x”（包括字符“x”)</code></p>
+<h3 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h3><h4 id="启动vi"><a href="#启动vi" class="headerlink" title="启动vi"></a>启动vi</h4><p><code>$ vim</code></p>
+<h4 id="vi常见模式"><a href="#vi常见模式" class="headerlink" title="vi常见模式"></a>vi常见模式</h4><blockquote>
+<p><strong>正常模式：</strong>又称命令模式，可以使用快捷键命令，或按:输入命令行。<br><strong>插入模式：</strong>可以输入文本，在正常模式下，按i、a、o等都可以进入插入模式。<br><strong>可视模式：</strong>正常模式下按v可以进入可视模式， 在可视模式下，移动光标可以选择文本。按V进入可视行模式， 总是整行整行的选中。ctrl+v进入可视块模式。<br><strong>替换模式：</strong>正常模式下，按R进入。</p>
+</blockquote>
+<h4 id="打开文件"><a href="#打开文件" class="headerlink" title="打开文件"></a>打开文件</h4><p><code>vi filea  # → 打开文件filea，光标默认在第一行</code><br><code>vi + filea  # → 打开文件filea，并将光标定位到最后一行</code><br><code>vi +8/n filea  # → 打开文件filea，并将光标定位到第8/n行</code><br><code>vi +/xxx filea  # → 打开文件filea，并将光标定位到xxx第一次出现的位置</code><br><code>vi filea fileb filec  # → 同时打开文件filea，fileb，filec</code><br><code>:n(next)  # → 切换下一个文件</code><br><code>:N(prev)  # → 切换上一个文件</code></p>
+<h4 id="折叠打开"><a href="#折叠打开" class="headerlink" title="折叠打开"></a>折叠打开</h4><p><code>zi  # → 关闭/打开折叠</code><br><code>zc  # → 折叠</code><br><code>zC/zR  # → 对所在范围内所有嵌套的折叠点进行折叠</code><br><code>zo  # → 展开折叠</code><br><code>zO/zM  # → 对所在范围内所有嵌套的折叠点展开</code></p>
+<h4 id="打开目录"><a href="#打开目录" class="headerlink" title="打开目录"></a>打开目录</h4><p><code>:Ex &lt;clipname&gt;  # → 打开当前文件所在目录或指定目录</code><br><code>:Se &lt;clipname&gt;  # → 上下分割并打开当前目录或指定目录</code><br><code>:Ve &lt;clipname&gt;  # → 左右分割并打开当前目录或指定目录</code><br><code>:Te &lt;clipname&gt;  # → 新建标签并打开当前目录或指定目录</code><br><code>注：打开目录之后可通过移动光标打开相应文件，常用操作如下：</code><br><code>enter  # → 回车会在当前窗口打开光标所在文件,即目录会被关闭</code><br><code>:p  # → 在预览窗口打开光标所在文件</code><br><code>:pclose  # → 关闭预览串口</code><br><code>:o  # → 在新浏览窗口打开光标所在文件，使用上下分割</code><br><code>:t  # → 在新标签页里打开光标所在文件(推荐)</code></p>
+<h4 id="替换"><a href="#替换" class="headerlink" title="替换"></a>替换</h4><p><code>% s/old/new/  # → 替换当前行第一个old</code><br><code>% s/old/new/g  # → 替换当前行所有old</code><br><code>8，29 s/old/new/g  # → 替换8-29行出现的所有old</code><br><code>1，$ s/old/new/g  # → 替换整个文件中出现的所有old，等价于 % s/old/new/g</code><br><code>g/string/s//new/g  # → 查找并替换，也等价于 % s/old/new/g</code><br><code>gU  # → 将选定范围全部大写</code><br><code>gu  # → 将选定范围全部小写</code><br><code>gUw/gUe  # → 将光标所在位置的单词转为大写</code><br><code>guw/gue  # → 将光标所在位置的单词转为小写</code></p>
+<h4 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h4><p><code>/&lt;search&gt;  # → 向后查找指定字符串</code><br><code>?&lt;search&gt;  # → 向后查找指定字符串</code><br><code>n  # → 查找下一个</code><br><code>N  # → 查找上一个</code></p>
+<h4 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h4><p><code>h  # → 向左一字符</code><br><code>j  # → 下一行</code><br><code>k  # → 上一行</code><br><code>l  # → 向右一字符</code><br><code>w or W  # → 向右移动到下一单词开头</code><br><code>e or E  # → 向右移动到单词结尾</code><br><code>b or B  # → 向左移动到单词开头</code><br><code>gg  # → 到文档第一行</code><br><code>G  # → 到文档最后一行</code><br><code>0  # → 到行首（第 1 列）</code><br><code>^  # → 到第一个非空白字符</code><br><code>$  # → 到行尾</code><br><code>:&lt;N&gt; or &lt;N&gt;gg  # → 跳转到第 N 行</code><br><code>:+&lt;N&gt; or &lt;N&gt;j  # → 向下跳 N 行</code><br><code>:-&lt;N&gt; or &lt;N&gt;k  # → 向上跳 N 行</code></p>
+<h4 id="翻屏"><a href="#翻屏" class="headerlink" title="翻屏"></a>翻屏</h4><p><code>Ctrl-d  # → 向下移动半页</code><br><code>Ctrl-u  # → 向上移动半页</code><br><code>Ctrl-f  # → 向下移动一页</code><br><code>Ctrl-b  # → 向上移动一页</code></p>
+<h4 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h4><p><code>i  # → 当前字符前插入</code><br><code>a  # → 当前字符后插入</code><br><code>I  # → 行首插入</code><br><code>A  # → 行尾插入</code><br><code>o  # → 在下一行插入</code><br><code>O  # → 在上一行插入</code><br><code>注：以上任何一个命令都会使 vim 进入 insert 模式</code></p>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><p><code>x  # → 删除当前字符，相当于 insert 模式下的 Delete</code><br><code>X  # → 删除前一个字符，相当于 insert 模式下的 Backspace</code><br><code>D  # → 删除到行尾</code><br><code>dd  # → 删除当前行，并将删除的内容保存到 vim 剪贴板</code><br><code>ndd  # → 删除从当前行开始的n行</code><br><code>de or dw  # → 删除一个单词/光标之后的单词剩余部分</code><br><code>d&lt;X&gt;  # → 删除指定内容并保存到 vim 剪贴板</code><br><code>c&lt;X&gt;  # → 删除指定内容并保存到 vim 剪贴板，同时进入 insert 模式</code><br><code>8,29 de  # → 删除8-29行</code></p>
+<h4 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h4><p><code>yy  # → 复制当前行到 vim 剪贴板</code><br><code>nyy  # → 复制光标以下的n行到 vim 剪贴板</code><br><code>y&lt;X&gt;  # → 复制指定内容到 vim 剪贴板</code><br><code>:9，15 co 16  # → 将9~15行内容复制到第16行（文件内复制推荐）</code></p>
+<h4 id="粘贴"><a href="#粘贴" class="headerlink" title="粘贴"></a>粘贴</h4><p><code>p  # → 在当前位置后粘贴</code><br><code>P  # → 在当前位置前粘贴</code></p>
+<h4 id="合并-撤销-重做"><a href="#合并-撤销-重做" class="headerlink" title="合并/撤销/重做"></a>合并/撤销/重做</h4><p><code>J  # → 将当前行与下一行合并</code><br><code>u  # → 撤销</code><br><code>ctrl r  # → 重做</code></p>
+<h4 id="保存"><a href="#保存" class="headerlink" title="保存"></a>保存</h4><p><code>:w  # → 保存当前文件</code><br><code>:q!  # → 退出</code><br><code>:wq!  # → 保存并退出</code><br><code>:wa  # → 保存全部文件</code><br><code>:saveas &lt;new filename&gt;</code></p>
+<h4 id="行号"><a href="#行号" class="headerlink" title="行号"></a>行号</h4><p><code>set nu or set number  # → 显示行号</code><br><code>set nonu or set nonumber  # → 隐藏行号</code></p>
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p><code>:8,29 s#^#//#g  # → 在8到29行添加‘//&#39;注释</code><br><code>:8,29 s#^//##g  # → 在8到29行删除&#39;//&#39;注释</code><br><code>:8,29 s/^/#/g  # → 在8到29行添加‘#&#39;注释</code><br><code>:8,29 s/^#//g  # → 在8到29行删除&#39;#&#39;注释</code><br><code>:8,29 s/^/&lt;!--/g  # → 在8到29行开头添加&#39;&lt;!--&#39;注释</code><br><code>:8,29 s/^/--&gt;/g  # → 在8到29行结尾添加&#39;--&gt;&#39;注释</code><br><code>:8,29 s/^&lt;!--//g  # → 在8到29行开头删除&#39;&lt;!--&#39;注释</code><br><code>:8,29 s/^/&lt;!--/g  # → 在8到29行结尾删除&#39;--&gt;&#39;注释</code><br><code>注：如果匹配&#39;//&#39;那么使用&#39;#&#39;作为分割符这样不需要对‘//&#39;做转义处理</code></p>
+<h4 id="分屏"><a href="#分屏" class="headerlink" title="分屏"></a>分屏</h4><p><code>:sp(split)  # → 上下分屏</code><br><code>:vs(vsplit)  # → 左右分屏</code><br><code>ctrl w w  # → 激活下一个窗口</code></p>
+<h4 id="标签页-NERDTree"><a href="#标签页-NERDTree" class="headerlink" title="标签页(NERDTree)"></a>标签页(NERDTree)</h4><p><code>:tabe &lt;new filename&gt;  # → 打开新标签页</code><br><code>gt or tabn(tabnext)  # → 切换下一个标签页</code><br><code>gT or tabp(tabprevious)  # → 切换上一个标签页</code><br><code>:tabr(tabrewind) or tabfi(tabfirst)  # → 切换到第一个标签页</code><br><code>:tabl(tablast)  # → 切换到最后一个标签页</code><br><code>:tabc(tabclose)  # → 关闭当前标签页</code><br><code>:tabo(tabonly)  # → 关闭其他标签页</code><br><code>:tabs  # → 查看buffer list</code></p>
+<h4 id="块操作"><a href="#块操作" class="headerlink" title="块操作"></a>块操作</h4><p><code>&lt;n&gt;gg  # → 跳转光标到起始行</code><br><code>ctrl v   # → 进入快操作模式</code><br><code>j  # → 移动光标到需要编辑的相同位置</code><br><code>A/I  # → 开始在字符后/前插入指定内容,按esc退出块模式即可完成操作</code><br><code>&lt;n&gt;gg$x  # → 删除指定行末尾的字符</code></p>
+<h4 id="vi中的宏"><a href="#vi中的宏" class="headerlink" title="vi中的宏"></a>vi中的宏</h4><p><code>qx  # → 开始录制宏，x为a到z或0~9的任意字符</code><br><code>q  # → 终止录制宏</code><br><code>@x  # → 调用先前录制的宏</code></p>
+<h4 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h4><p><code>.  # → 重复执行上一个命令</code><br><code>&gt;&gt;  # → 向右自动缩进（结合块模式使用可进行多行缩进）</code><br><code>&lt;&lt;  # → 向左自动缩进（结合块模式使用可进行多行缩进）</code><br><code>=  # → 自动排版当前选中代码</code><br><code>gg=G  # → 对整个文件进行排版</code><br><code>:f  # → 显示vim当前的文件路径</code><br><code>:pwd  # → 显示vim的工作目录</code><br><code>:set ff  # → 显示当前文件的格式</code></p>
+<h4 id="NERDTree"><a href="#NERDTree" class="headerlink" title="NERDTree"></a>NERDTree</h4><p><code>o  # → 打开一个目录或者打开文件，创建的是buffer，也可以用来打开书签</code><br><code>go  # → 打开一个文件，但是光标仍然留在NERDTree，创建的是buffer</code><br><code>t  # → 打开一个文件，创建的是Tab，对书签同样生效</code><br><code>T  # → 打开一个文件，但是光标仍然留在NERDTree，创建的是Tab，对书签同样生效</code><br><code>i  # → 水平分割创建文件的窗口，创建的是buffer</code><br><code>gi  # → 水平分割创建文件的窗口，但是光标仍然留在NERDTree</code><br><code>s  # → 垂直分割创建文件的窗口，创建的是buffer</code><br><code>gs  # → 和gi，go类似</code><br><code>x  # → 收起当前打开的目录</code><br><code>X  # → 收起所有打开的目录</code><br><code>e  # → 以文件管理的方式打开选中的目录</code><br><code>D  # → 删除书签</code><br><code>P  # → 大写，跳转到当前根路径</code><br><code>p  # → 小写，跳转到光标所在的上一级路径</code><br><code>K  # → 跳转到第一个子路径</code><br><code>J  # → 跳转到最后一个子路径</code><br><code>&lt;C-j&gt;和&lt;C-k&gt;  # → 在同级目录和文件间移动，忽略子目录和子文件</code><br><code>C  # → 将根路径设置为光标所在的目录</code><br><code>u  # → 设置上级目录为根路径</code><br><code>U  # → 设置上级目录为跟路径，但是维持原来目录打开的状态</code><br><code>r  # → 刷新光标所在的目录</code><br><code>R  # → 刷新当前根路径</code><br><code>m  # → 显示文件系统菜单</code><br><code>cd  # → 将 CWD 设为选中目录</code><br><code>F  # → 切换是否显示文件</code><br><code>B  # → 切换是否显示书签</code><br><code>I  # → 显示或者不显示隐藏文件</code><br><code>f  # → 打开和关闭文件过滤器</code><br><code>q  # → 关闭NERDTree</code><br><code>A  # → 全屏显示NERDTree，或者关闭全屏</code></p>
+<h4 id="Airline"><a href="#Airline" class="headerlink" title="Airline"></a>Airline</h4><p><code>Ctrl-N  # → 切换下一个buffer</code><br><code>Ctrl-P  # → 切换前一个buffer</code><br><code>:ls  # → 查看buffer list</code><br><code>:bd  # → 关闭当前buffer</code><br><code>:b n  # → 切换buffer，n为buffer序号</code><br><code>vim-multiple-cursors</code><br><code>Ctrl-n  # → 连续选中光标所在单词的下一个</code><br><code>Shift-i  # → 进入块插入模式</code></p>
+<p><img src="/css/images/KTvySIamyggGdvFy.png" alt=""></p>
 <p>更新中……</p>
 <p>附：VIM键位图</p>
 </section>
@@ -141,7 +184,7 @@
       <script>
         var disqus_shortname = 'https-l-hammer-github-io';
         
-        var disqus_url = 'http://yoursite.com/2017/08/12/vi-hot-key/';
+        var disqus_url = 'https://lhammer.cn/2017/08/12/vi-hot-key/';
         
         (function(){
           var dsq = document.createElement('script');
@@ -162,7 +205,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2017/08/12/vi-hot-key/';
+    var url = 'https://lhammer.cn/2017/08/12/vi-hot-key/';
     $('#article-banner').geopattern(url)
     $('.header').removeClass('fixed-header')
 
